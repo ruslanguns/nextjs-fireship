@@ -2,9 +2,8 @@ import { SERVICE_URL } from '@/lib/constants';
 import Link from 'next/link';
 
 export default async function Blog() {
-  const posts = await fetch(SERVICE_URL + '/api/content').then((res) =>
-    res.json()
-  );
+  const apiUrl = SERVICE_URL + '/api/content';
+  const posts = await fetch(apiUrl).then((res) => res.json());
   return (
     <div>
       <h1>Welcome to our Blog</h1>
